@@ -1,12 +1,15 @@
-from pytube import YouTube
-from sys import argv
+import click
+from commands.install import install
 
-link = argv[1]
-yt = YouTube(link)
+@click.version_option('1.0.0', message='%(prog)s version %(version)s')
+@click.group(context_settings={'help_option_names': ['-h', '--help']})
+def cli():
+  """
+    A Youtube downloader made with Python\n
+      example: python src/main.py install [URL]
+  """
+  pass
 
-print("Title: " + yt.title)
-print("https://youtube.com/watch?v=" + yt.video_id)
-
-yd = yt.streams.get_highest_resolution()
-
-yd.download('./yt-downloads')
+if __name__ == '__main__':
+  cli.add_command(install)
+  cli()
