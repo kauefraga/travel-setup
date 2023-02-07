@@ -32,6 +32,7 @@
 - **Colorized Outputs**: Things become better with some colors
 - **Nice help**: If you need some help, just use the flag `--help`
 - **Commands**:
+  `install`: Install a video with an URL
 
 ## ⬇️ How to install and use it
 
